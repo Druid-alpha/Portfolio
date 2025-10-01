@@ -6,18 +6,18 @@
 
 body {
     background-image: url('./multimedia/portfolio\ background.jpg') !important;
-    /* animation: body-move 3s ease; */
+    /* animation: bodyRotate 1s linear 1; */
     font-family: "Playfair", serif !important;
 
 }
 
-@keyframes body-move {
+@keyframes bodyRotate {
     from {
-        transform: rotate(360deg);
+        transform: rotate(0deg);
     }
 
     to {
-        transform: rotate(0deg);
+        transform: rotate(3600deg);
     }
 }
 .big{
