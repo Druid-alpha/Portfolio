@@ -6,18 +6,18 @@
 
 body {
     background-image: url('./multimedia/portfolio\ background.jpg') !important;
-    animation: bodyRotate 1s linear 1;
+    animation: bodyRotate 1s linear 1s;
     font-family: "Playfair", serif !important;
 
 }
 
 @keyframes bodyRotate {
     from {
-        transform: rotate(0deg);
+        transform: rotate(360deg);
     }
 
     to {
-        transform: rotate(360deg);
+        transform: rotate(0deg);
     }
 }
 .big{
@@ -100,15 +100,12 @@ body {
 }
 
 .bord {
-    border-right: 1px solid black;
+    border-right: 1px solid #96928c;
 
 }
 
-/* .bordx{
-    border-left:1px solid black;
-} */
 .bord1 {
-    border-left: 1px solid black
+    border-left: 1px solid #96928c;
 }
 
 .work {
@@ -234,9 +231,14 @@ body {
 }
 
 .card {
-    background-image: url('./multimedia/download\ \(3\).svg');
-    background-position: center;
+    /* background-position: center; */
     background-size: cover;
+    border: 1px solid ;
+    padding: 10px;
+}
+.card-body{
+    background-image: url("./multimedia/download\ \(1\).svg");
+    background-color: #c5beb4;
 }
 
 .card-stack {
@@ -256,6 +258,10 @@ body {
     transition: all 0.4s ease;
     display: flex;
     flex-direction: column;
+    background-color: #c5beb4;
+
+    /* border:1px dashed black; */
+
 }
 
 .card .card-body {
@@ -282,21 +288,25 @@ footer {
     padding: 20px;
      margin: 10px 0;
     border-top: 1px solid black;
-    border-bottom: 1px solid black
+    border-bottom: 1px solid black;
+    overflow: hidden;
 }
 
 .last {
+    display: inline-block;
     transition: transform 3s ease;
-    animation: dance 5s linear infinite;
+    animation: dance 8s linear infinite;
+    white-space: nowrap;
+    /* position: absolute; */
 }
 
 @keyframes dance {
-    from {
-        transform: translateX(0%);
+    0% {
+        transform: translateX(0);
     }
 
-    to {
-        transform: translateX(100%)
+    100%{
+        transform: translateX(-50%)
     }
 
 }
@@ -443,7 +453,7 @@ footer {
     .bord,
     .bord1 {
         border: none;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid #96928c;
         padding: 10px;
         margin: 20px 0;
     }

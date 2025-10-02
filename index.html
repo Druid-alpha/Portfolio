@@ -42,6 +42,7 @@
                     </span>
                 </div>
             </button>
+
             <div class="offcanvas offcanvas-top h-100 bg-black text-white " tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header  ">
@@ -53,13 +54,12 @@
                     </button>
                 </div>
                 <div class="offcanvas-body">
-                    <!-- <a class="nav-link active text-start text-white fs-1" aria-current="page" href="#">Femzzy's
-                        portfolio </a> -->
 
                     <ul class="navbar-nav ">
 
 
-                        <li class="nav-item d-flex flex-column align-center gap-0 lh-0 /justify-content-center text-center ">
+                        <li
+                            class="nav-item d-flex flex-column align-center gap-0 lh-0 /justify-content-center text-center ">
                             <a class="big nav-link   fw-bold text-sm-center text-white" href="#">Index</a>
                             <a class=" big nav-link fw-bold text-sm-center text-white " id="navlink2" href="#">Work</a>
                             <a class=" big nav-link fw-bold text-sm-center text-white" href="#">About</a>
@@ -132,8 +132,7 @@
     <section class="sec2  container-fluid  d-md-flex gap-2 px-md-5 gap-md-4">
         <div class="bord row border-sm-bottom   px-1">
             <div class=" col-12 col-md-4 ">
-                <h1 class="h1-mod text-center ">Enthusiastic <span
-                        class="developer text-center text-md-start">Developer!</span>
+                <h1 class="h1-mod  ">Enthusiastic <span class="developer text-md-start">Developer!</span>
                 </h1>
             </div>
             <div class="   col-md-12  p-3">
@@ -161,7 +160,8 @@
 
             </div>
             <div class="col-md-3 ">
-                <img class="img-fluid object-fit-cover w-100 h-100 " src="./multimedia/imgi_303_web-developer.jpg" alt="">
+                <img class="img-fluid object-fit-cover w-100 h-100 " src="./multimedia/imgi_303_web-developer.jpg"
+                    alt="">
 
             </div>
         </div>
@@ -188,18 +188,18 @@
                                 explore</p>
 
                         </div>
-                        <div class="">
-                            <div class="gap-3 ">
-                                <div class="  p-3  bord1  ">
-                                    <a href="https://druid-alpha.github.io/mxlr/"><img
-                                            class=" custom-img img-fluid cursor-pointer object-fit-cover w-100   "
-                                            src="./multimedia/mixlr-audio.jpeg" alt=""></a>
-                                </div>
 
-
+                        <div class="gap-3 ">
+                            <div class="  p-3  bord1  ">
+                                <a href="https://druid-alpha.github.io/mxlr/"><img
+                                        class=" custom-img img-fluid cursor-pointer object-fit-cover w-100   "
+                                        src="./multimedia/mixlr-audio.jpeg" alt=""></a>
                             </div>
 
+
                         </div>
+
+                        t
 
                     </div>
                     <div class="">
@@ -223,7 +223,7 @@
                 <p class="all-work d-none /text-md-center d-lg-inline">All Works</p>
 
             </div>
-            <section class="container-fluid p-3 p-md-3 ">
+            <div class="container-fluid p-3 p-md-3 ">
                 <div class="d-md-flex flex-col ">
                     <div class=" inno-col d-md-flex flex-md-column gap-3">
                         <div class="d-md-flex">
@@ -234,7 +234,7 @@
                     </div><img class=" neww-img img-fluid  object-fit-cover" src="./multimedia/innovation.jpg" alt="">
                 </div>
 
-            </section>
+            </div>
 
 
         </div>
@@ -243,33 +243,46 @@
         <div class="card-stack  fs-4 fs-md-1 ">
             <div class="card d-block d-md-flex  d-lg-flex ">
                 <div class="card-body ">
-                    <p class="card-text">I create websites that adapt seamlessly to any device, ensuring smooth
-                        experiences for mobile and desktop users</p>
+                    <div class="card-title fs-1 fw-bold text-center text-success">About Me</div>
+                    <p class="card-text">Hi, i'm Oluwafemi Ajayi, a budding web developer passionate about building
+                        responsive and modern websites. </p>
                 </div>
             </div>
 
             <div class="card d">
                 <div class="card-body">
-                    <p class="card-text">I keep up with modern frameworks (like React, Tailwind, Bootstrap) and best
-                        practices to deliver projects that meet current industry standards.
+                    <div class="card-title fs-1 fw-bold text-center text-success">Skills</div>
+                    <p class="card-text">Frontend: HTML5, CSS3, Javascript (ES6+), React
+                    </p>
+                    <p class="card-text"> Styling: Tailwind CSS,Bootstrap
+                    </p>
+                    <p class="card-text">Git, GitHub, VS Code
+                    </p>
+                    <p class="card-text">Other: Responsive design
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="card ">
+                <div class="card-body">
+                    <div class="card-title fs-1 fw-bold text-center text-success">Project</div>
+
+                    <p class="card-text">
+                        Survey Form-Dynamic multi-component form with React
+                    </p>
+                    <p class="card-text">
+                        Portfolio website-Personal showcase with Bootstrap layout
                     </p>
                 </div>
             </div>
 
-            <div class="card d-none  d-lg-flex ">
+            <div class="  card ">
                 <div class="card-body">
+                    <div class="card-title fs-1 fw-bold text-center text-success">Contact</div>
                     <p class="card-text">
-                        i enjoy working in teams, bringing creativity and communication skills that help projects
-                        succeed.
-                    </p>
-                </div>
-            </div>
+                        I'm always open to collaboration, internships, or freelance opportunities. Lets connect!
 
-            <div class=" d-none d-lg-flex card ">
-                <div class="card-body">
-                    <p class="card-text">
-                        I believe in contributing to knowledge-sharing platforms, coding communities, and open-source
-                        projects to strengthen the web development ecosystem.
                     </p>
                 </div>
             </div>
@@ -278,17 +291,26 @@
 
 
 
-    <footer class="overflow-hidden">
+    <footer >
         <div class="last ">
-            <h1 class=" fs-1  d-none d-md-inline d-none d-md-inline ">Let's create something together<a
-                    href="mailto:oluwafemiajayi103@gmail.com" class="text-decoration-none ">
-                    <span class="fw-bold bg-dark text-white px-1">EMAIL ME</span></a></h1>
+            <span class="fw-bold fs-1 me-4">Let's work together
+                <span class="fw-bold bg-dark px-2"><a href="mailto:oluwafemiajayi103@gmail.com"
+                        class="text-decoration-none text-white">Contact me via email</a></span></span>
+            <span class="fw-bold fs-1 me-4">Let's work together
+                <span class="fw-bold bg-dark px-2"><a href="mailto:oluwafemiajayi103@gmail.com"
+                        class="text-decoration-none text-white">Contact me via email</a></span></span>
+            <span class="fw-bold fs-1 me-4">Let's work together
+                <span class="fw-bold bg-dark px-2"><a href="mailto:oluwafemiajayi103@gmail.com"
+                        class="text-decoration-none text-white">Contact me via email</a></span></span>
+            <span class="fw-bold fs-1 me-4">Let's work together
+                <span class="fw-bold bg-dark px-2"><a href="mailto:oluwafemiajayi103@gmail.com"
+                        class="text-decoration-none text-white">Contact me via email</a></span></span>
 
         </div>
-        <h2 class="fs-1 text-center d-md-none text-decoration-none">Let's create something together <a
+        <!-- <h2 class="fs-1 text-center d-md-none text-decoration-none">Let's create something together <a
                 href="mailto:oluwafemiajayi103@gmail.com" class="text-decoration-none "> <span
                     class="fw-bold bg-dark text-white px-1">EMAIL
-                    ME</span></a> </h2>
+                    ME</span></a> </h2> -->
     </footer>
     <div class="d-flex justify-content-md-end  justify-content-center gap-2 p-4 ">
         <a class="text-decoration-none" href="#">
