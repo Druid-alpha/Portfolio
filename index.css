@@ -437,7 +437,7 @@ footer {
 
 @media (max-width: 426px) {
     .sec1 {
-        font-size: 6.5rem;
+        font-size: 6.3rem;
     }
 
     .bord,
@@ -449,7 +449,7 @@ footer {
     }
 
     .sec3 {
-        font-size: 5.6rem;
+        font-size: 5.5rem;
 
     }
 
@@ -462,7 +462,7 @@ footer {
     }
 
     .new {
-        font-size: 12rem;
+        font-size: 11.8rem;
     }
 
     .new-img {
@@ -476,7 +476,7 @@ footer {
     line-height: 30px;
 }
     .innovate {
-        font-size: 4.5rem;
+        font-size: 4.4rem;
         transform: scaleY(2.1);
     }
 
@@ -490,16 +490,16 @@ footer {
 
 @media (max-width: 376px) {
     .innovate {
-        font-size: 3.9rem;
+        font-size: 3.8rem;
         transform: scaleY(2.1);
     }
 
     .new {
-        font-size: 10.3rem;
+        font-size: 10.2rem;
     }
 
     .sec3 {
-        font-size: 5.3rem;
+        font-size: 5.2rem;
         margin: 10px 0;
     }
 
@@ -509,19 +509,19 @@ footer {
     }
 
     .sec1 {
-        font-size: 6.4rem;
+        font-size: 6.3rem;
         margin: 0;
     }
 }
 
 @media (max-width: 321px) {
     .sec1 {
-        font-size: 5.5rem;
+        font-size: 5.4rem;
         margin: 0;
     }
 
     .sec3 {
-        font-size: 4.5rem;
+        font-size: 4.4rem;
         margin: 10px 0;
     }
 
@@ -543,11 +543,11 @@ footer {
     }
 
     .new {
-        font-size: 9rem;
+        font-size: 8.9rem;
     }
 
     .innovate {
-        font-size: 3.3rem;
+        font-size: 3.2rem;
         transform: scaleY(2.5);
     }
 }
