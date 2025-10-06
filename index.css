@@ -343,7 +343,7 @@ body {}
 
 .femzzy {
     transition: 5s ease;
-    animation: femzzy1 3s ease-in-out;
+    animation: femzzy1 5s ease-in-out;
     /* font-family: "Cinzel Decorative", serif; */
 }
 
@@ -784,7 +784,7 @@ footer {
     } */
 }
 
-@media (max-width: 376px) {
+@media (max-width: 414px) {
     .innovate {
         font-size: 3.8rem;
         transform: scaleY(2.1);
