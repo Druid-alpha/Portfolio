@@ -783,8 +783,22 @@ footer {
         height: 272px;
     } */
 }
+@media (max-width:415px){
+    .h1-mod {
+        font-size: 2.5rem;
+    }
+        .h-mod {
+        font-size: 1.9rem;
+    }
+        .think {
+        
+        max-width: 374px;
+    }.soc-link {
+    font-size: 0.9rem;
+}
 
-@media (max-width: 414px) {
+}
+@media (max-width: 376px) {
     .innovate {
         font-size: 3.8rem;
         transform: scaleY(2.1);
