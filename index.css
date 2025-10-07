@@ -95,9 +95,7 @@ body {}
     ;
 }
 
-.offcanvas {
-    transition: transform 2s ease !important;
-}
+
 
 .hamburger {
     position: relative
@@ -109,7 +107,7 @@ body {}
 }
 
 .offcanvas {
-    transition: 1s ease;
+    transition: 1.5s ease;
 }
 
 .all-wrk {
@@ -158,7 +156,7 @@ body {}
     width: 32px;
     height: 32px;
     border: none;
-    background: white;
+    background: black;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -243,7 +241,7 @@ body {}
 
 .h-mod {
     font-size: 3.5rem;
-    line-height: 100px;
+    line-height: 79px;
     position: relative;
     display: inline-block;
 
@@ -523,7 +521,7 @@ footer {
 
     .h-mod {
         font-size: 2.5rem;
-        line-height: 60px;
+        line-height: 51px;
     }
 
     .all-work p:first-child {
@@ -549,7 +547,7 @@ footer {
     }
 
     .think {
-        font-size: 1.9rem;
+        font-size: 1.8rem;
         line-height: 21px;
         text-align: center;
     }
@@ -583,7 +581,7 @@ footer {
 
     .h-mod {
         font-size: 2.2rem;
-        line-height: 51px;
+        line-height: 39px;
     }
 
     .think-head {
