@@ -73,9 +73,9 @@
 
 
                             <li class="nav-item d-flex flex-column /align-center   text-center ">
-                                <a class="big     text-center " id="navlink2" href="#">INDEX</a>
-                                <a class=" big  text-decoration-none text-center  " href="#">WORK</a>
-                                <a class=" big  text-decoration-none text-center " href="#">ABOUT</a>
+                                <a class="big     text-center " id="navlink2" href="#index">INDEX</a>
+                                <a class=" big  text-decoration-none text-center  " href="#work">WORK</a>
+                                <a class=" big  text-decoration-none text-center " href="#about">ABOUT</a>
                             </li>
                             <div class=" ">
                                 <ul class="d-flex justify-content-center align-center text-center gap-md-4 gap-4">
@@ -104,39 +104,50 @@
                 </div>
             </div>
         </nav>
-        <header class=" head container-fluid">
-            <div class="row">
-                <div class=" bord overflow-hidden col-12 col-md-4 text-center px-md-2 px-lg-4   ">
-                    <a class="" href="https://druid-alpha.github.io/humanKind/">
+        <header id="index" class=" head container-fluid">
+            <div id="work" class="row g-4">
+                <div class=" bord overflow-hidden col-12 col-md-3 text-center px-md-2 px-lg-4 " data-aos="fade-up">
+                    <a href="https://shop-luxe-new.vercel.app">
+                        <div class=" overflow-hidden ">
+                            <img class="img-work img-fluid border border-black " src="./multimedia/shopluxe_next.jpg" alt="ShopLuxe Next.js">
+                        </div>
+                    </a>
+                    <h2 class="fs-5 text-center text-md-start mt-2">
+                        <strong>ShopLuxe Premium (Next.js)</strong> - A high-end e-commerce solution with Next.js 15.
+                    </h2>
+                </div>
+                <div class=" bord overflow-hidden col-12 col-md-3 text-center px-md-2 px-lg-4 " data-aos="fade-up" data-aos-delay="100">
+                    <a href="https://shopluxe-seven.vercel.app">
+                        <div class=" overflow-hidden ">
+                            <img class="img-work img-fluid border border-black " src="./multimedia/shopluxe_mern.jpg" alt="ShopLuxe MERN">
+                        </div>
+                    </a>
+                    <h2 class="fs-5 text-center text-md-start mt-2">
+                        <strong>ShopLuxe (MERN)</strong> - Full-stack MERN e-commerce platform with real-time features.
+                    </h2>
+                </div>
+                <div class=" bord overflow-hidden col-12 col-md-3 text-center px-md-2 px-lg-4 " data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://druid-alpha.github.io/humanKind/">
                         <div class=" overflow-hidden ">
                             <img class="img-work img-fluid border border-black " src="./multimedia/humankind.jpeg" alt="">
+                        </div>
                     </a>
+                    <h2 class="fs-5 text-center text-md-start mt-2">
+                         HumanKind Homepage Clone focusing on responsive layouts and animations.
+                    </h2>
                 </div>
-
-                <h2 class="  fs-5 text-center text-md-start">
-                    Designed and built a responsive clone of the HumanKind homepage for practice in modern web layouts
-                    and animation effects
-                </h2>
+                <div class="col-12 col-md-3 bordx " data-aos="fade-up" data-aos-delay="300">
+                    <a class="cursor-pointer" href="https://piggyvest-98sk.vercel.app">
+                        <div class="overflow-hidden">
+                            <img class="img-work img-fluid rounded border-3 border-dark "
+                                src="./multimedia/piggyvest.jpeg" alt="">
+                        </div>
+                    </a>
+                    <h2 class="fs-5 text-center text-md-start mt-2">
+                        Piggyvest landing page recreation with modern UI fidelity.
+                    </h2>
+                </div>
             </div>
-            <div class="col-12 col-md-4 bord ">
-                <h1 class=" all-wrk fs-1 fw-bold text-center">All works!</h1>
-                <p class="fs-3 text-center">A collection of my latest works </p>
-            </div>
-            <div class="col-12 col-md-4   bordx ">
-                <a class="cursor-pointer" href="https://piggyvest-98sk.vercel.app">
-                    <div class="overflow-hidden">
-                        <img class="img-work img-fluid rounded border-3 border-dark   "
-                            src="./multimedia/piggyvest.jpeg" alt="">
-                    </div>
-                </a>
-                <h2 class="fs-5 text-center text-md-start">
-                    Recreated the Piggyvest landing page as a personal project and implemented a clean ,modern UI that
-                    adapts across mobile,tablet, and desktop screens
-                </h2>
-
-
-            </div>
-
         </header>
         <section>
             <div>
@@ -172,7 +183,7 @@
                     <h1 class="h-mod">BASED IN OSOGBO,NIGERIA</h1>
             </div>
         </section>
-        <section class="container-fluid  ">
+        <section id="about" class="container-fluid  ">
             <div class="row ">
                 <div class=" col-12 col-md-9 ">
                     <h1 class=" sec3 fw-bold text-center bg-dark text-white ">WEBSITE</h1>
@@ -246,10 +257,9 @@
                         designing,testing out different approaches.Finally, i focus on delivering.That means making sure
                         what i've built actually works,looks good, and solves the problem it was meant to.
                     </p>
-                    <div class="all-work d-none d-md-inline-block">
+                    <div class="all-work d-none d-md-flex">
                         <p class=" text-center ">All Works</p>
-                        <p class=" text-center">Click here</p>
-
+                        <p class=" text-center">See More</p>
                     </div>
 
                 </div>
@@ -272,7 +282,7 @@
             </div>
         </section>
 
-        <div class=" m-4 d-none d-md-flex  card-section flex-column flex-md-row ">
+        <div id="contact" class=" m-4 d-none d-md-flex  card-section flex-column flex-md-row ">
             <div class="boxes box1">
                 <div class="cardss card1 m-2 px-4 py-2">
                     <h1 class="fw-bold fs-3 text-center ">ABOUT ME</h1>
@@ -346,7 +356,7 @@
 
 
 
-        <footer>
+        <footer id="contact">
             <div class="last ">
                 <span class="fw-bold fs-1 me-4">Let's work together
                     <span class="fw-bold bg-dark px-2"><a href="mailto:oluwafemiajayi103@gmail.com"
@@ -392,9 +402,14 @@
 
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
-            </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true
+            });
+        </script>
     </div>
 </body>
 
