@@ -13,26 +13,46 @@ body {
     overflow-x: hidden;
     background-color: #f8f9fa;
     color: #333;
-    opacity: 0;
-    animation: fadeInPage 1.5s ease-out forwards;
-}
-
-@keyframes fadeInPage {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
 
 .body-content {
     background-image: url('./multimedia/portfolio\ background.jpg');
     margin: auto;
+    animation: bodyRotate 3s ease-in-out;
     transition: 2s ease-in-out;
     font-family: "Playfair", serif !important;
     overflow: hidden;
-    min-height: 100vh;
+}
+
+@keyframes bodyRotate {
+    0% {
+        transform: translateY(800px) rotate(0deg);
+        width: 50%;
+    }
+
+    20% {
+        transform: translateY(0) rotate(0deg);
+        height: 80vh;
+        width: 50%;
+    }
+
+    40% {
+        transform: translateY(0) rotate(0deg);
+        height: 80vh;
+        width: 50%;
+    }
+
+    70% {
+        transform: translateY(0) rotate(-360deg);
+        height: 80vh;
+        width: 50%;
+    }
+
+    100% {
+        transform: translateY(0%) rotate(-360deg);
+        height: 80vh;
+        width: 100%;
+    }
 }
 
 .big {
