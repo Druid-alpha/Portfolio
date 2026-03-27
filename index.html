@@ -446,47 +446,35 @@
                     document.body.scrollTop = 0;
                 };
 
-                const lockScroll = () => {
-                    document.documentElement.classList.add('is-animating');
-                    document.body.classList.add('is-animating');
-                };
+                scrollTopInstant();
 
-                const unlockScroll = () => {
-                    document.documentElement.classList.remove('is-animating');
-                    document.body.classList.remove('is-animating');
-                };
-
-                const runMobileIntro = () => {
-                    const overlay = document.createElement('div');
-                    overlay.className = 'intro-overlay';
-
-                    const clone = content.cloneNode(true);
-                    clone.classList.add('intro-clone');
-                    overlay.appendChild(clone);
-
-                    document.body.appendChild(overlay);
-                    document.documentElement.classList.add('intro-active');
-                    lockScroll();
+                const onEnd = () => {
                     scrollTopInstant();
-
-                    const cleanup = () => {
-                        document.documentElement.classList.remove('intro-active');
-                        overlay.remove();
-                        unlockScroll();
-                        scrollTopInstant();
-                    };
-
-                    clone.addEventListener('animationend', cleanup, { once: true });
-                    setTimeout(cleanup, 6000);
                 };
+
+                content.addEventListener('animationend', onEnd, { once: true });
+
+                // Fallback in case animationend doesn't fire
+                setTimeout(scrollTopInstant, 6000);
 
                 const isSmallScreen = window.matchMedia('(max-width: 430px)').matches;
                 if (isSmallScreen) {
-                    runMobileIntro();
-                } else {
-                    scrollTopInstant();
-                    content.addEventListener('animationend', scrollTopInstant, { once: true });
-                    setTimeout(scrollTopInstant, 6000);
+                    const applyMobileFit = () => {
+                        const docH = content.scrollHeight || 0;
+                        const viewH = window.innerHeight || 1;
+                        const scaleFit = Math.min(1, viewH / docH);
+                        const s0 = Math.max(0.05, scaleFit * 0.9);
+                        const s1 = Math.max(0.06, Math.min(1, scaleFit * 0.95));
+                        const s2 = Math.max(0.07, Math.min(1, scaleFit));
+
+                        document.documentElement.style.setProperty('--intro-scale-0', s0.toFixed(4));
+                        document.documentElement.style.setProperty('--intro-scale-1', s1.toFixed(4));
+                        document.documentElement.style.setProperty('--intro-scale-2', s2.toFixed(4));
+                    };
+
+                    requestAnimationFrame(applyMobileFit);
+                    setTimeout(applyMobileFit, 300);
+                    window.addEventListener('load', applyMobileFit, { once: true });
                 }
             });
         </script>
