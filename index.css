@@ -15,6 +15,29 @@ body {
     color: #333;
 }
 
+.intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #000000;
+    background-image: url('./multimedia/portfolio\ background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+}
+
+.intro-overlay .intro-clone {
+    width: 100%;
+    height: 100%;
+    transform-origin: 50% 50%;
+    will-change: transform, opacity;
+}
+
 .is-animating,
 .is-animating body {
     height: 70%;
@@ -57,6 +80,28 @@ body {
 
     75% {
         transform: translate3d(0, 50vh, 0) scale(0.10) rotate(-360deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) scale(1) rotate(-360deg);
+        opacity: 1;
+    }
+}
+
+@keyframes bodyRotateOverlay {
+    0% {
+        transform: translate3d(0, var(--intro-shift-1), 0) scale(0.08) rotate(0deg);
+        opacity: 1;
+    }
+
+    55% {
+        transform: translate3d(0, var(--intro-shift-2), 0) scale(0.09) rotate(0deg);
+        opacity: 1;
+    }
+
+    75% {
+        transform: translate3d(0, var(--intro-shift-2), 0) scale(0.10) rotate(-360deg);
         opacity: 1;
     }
 
@@ -851,6 +896,24 @@ footer {
 }
 
 @media (max-width: 430px) {
+    .intro-active .intro-overlay {
+        display: flex;
+    }
+
+    .intro-active .body-content:not(.intro-clone) {
+        visibility: hidden;
+    }
+
+    .intro-overlay .intro-clone {
+        --intro-shift-1: 4vh;
+        --intro-shift-2: 12vh;
+        animation: bodyRotateOverlay 6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+    }
+
+    .body-content {
+        animation: none;
+    }
+
     .sec1 {
         font-size: 6.3rem;
     }
@@ -947,6 +1010,11 @@ footer {
 
 }
 @media (max-width: 376px) {
+    .intro-overlay .intro-clone {
+        --intro-shift-1: 3vh;
+        --intro-shift-2: 10vh;
+    }
+
     .innovate {
         font-size: 3.8rem;
         transform: scaleY(2.1);
@@ -983,6 +1051,11 @@ footer {
 }
 
 @media (max-width: 321px) {
+    .intro-overlay .intro-clone {
+        --intro-shift-1: 2.5vh;
+        --intro-shift-2: 9vh;
+    }
+
     .sec1 {
         font-size: 5.4rem;
         margin: 0;

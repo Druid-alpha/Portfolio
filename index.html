@@ -446,16 +446,48 @@
                     document.body.scrollTop = 0;
                 };
 
-                scrollTopInstant();
-
-                const onEnd = () => {
-                    scrollTopInstant();
+                const lockScroll = () => {
+                    document.documentElement.classList.add('is-animating');
+                    document.body.classList.add('is-animating');
                 };
 
-                content.addEventListener('animationend', onEnd, { once: true });
+                const unlockScroll = () => {
+                    document.documentElement.classList.remove('is-animating');
+                    document.body.classList.remove('is-animating');
+                };
 
-                // Fallback in case animationend doesn't fire
-                setTimeout(scrollTopInstant, 6000);
+                const runMobileIntro = () => {
+                    const overlay = document.createElement('div');
+                    overlay.className = 'intro-overlay';
+
+                    const clone = content.cloneNode(true);
+                    clone.classList.add('intro-clone');
+                    overlay.appendChild(clone);
+
+                    document.body.appendChild(overlay);
+                    document.documentElement.classList.add('intro-active');
+                    lockScroll();
+                    scrollTopInstant();
+
+                    const cleanup = () => {
+                        document.documentElement.classList.remove('intro-active');
+                        overlay.remove();
+                        unlockScroll();
+                        scrollTopInstant();
+                    };
+
+                    clone.addEventListener('animationend', cleanup, { once: true });
+                    setTimeout(cleanup, 6000);
+                };
+
+                const isSmallScreen = window.matchMedia('(max-width: 430px)').matches;
+                if (isSmallScreen) {
+                    runMobileIntro();
+                } else {
+                    scrollTopInstant();
+                    content.addEventListener('animationend', scrollTopInstant, { once: true });
+                    setTimeout(scrollTopInstant, 6000);
+                }
             });
         </script>
     </div>
