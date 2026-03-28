@@ -94,22 +94,22 @@ body {
 
 @keyframes bodyRotateMobile {
     0% {
-        transform: translate3d(0, 0, 0) scale(var(--intro-scale-0, 0.12)) rotate(0deg);
+        transform: translate3d(0, calc(50vh - 50%), 0) scale(var(--intro-scale-0, 0.18)) rotate(0deg);
         opacity: 1;
     }
 
     55% {
-        transform: translate3d(0, 0, 0) scale(var(--intro-scale-1, 0.13)) rotate(0deg);
+        transform: translate3d(0, calc(50vh - 50%), 0) scale(var(--intro-scale-1, 0.2)) rotate(0deg);
         opacity: 1;
     }
 
     75% {
-        transform: translate3d(0, 0, 0) scale(var(--intro-scale-2, 0.14)) rotate(-360deg);
+        transform: translate3d(0, calc(50vh - 50%), 0) scale(var(--intro-scale-2, 0.22)) rotate(-360deg);
         opacity: 1;
     }
 
     100% {
-        transform: translate3d(0, 0, 0) scale(1) rotate(-360deg);
+        transform: translate3d(0, calc(50vh - 50%), 0) scale(1) rotate(-360deg);
         opacity: 1;
     }
 }
@@ -307,9 +307,11 @@ body {
 }
 
 .mixlr-img {
+    width: 100%;
     height: 220px;
     object-fit: cover;
-    aspect-ratio: auto;
+    object-position: center;
+    aspect-ratio: 16 / 9;
 }
 
 .project-card {
@@ -769,6 +771,11 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .body-content {
+        animation: bodyRotateMobile 6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+        transform-origin: center center;
+    }
+
     .sec1 {
         font-size: 12.5rem;
     }
@@ -913,7 +920,8 @@ footer {
     }
 
     .sec1 {
-        font-size: 3.6rem;
+        font-size: clamp(5.2rem, 18vw, 7.6rem);
+        line-height: 0.95;
         margin: 2px 4px;
     }
 
@@ -934,13 +942,14 @@ footer {
     }
 
     .sec3 {
-        font-size: 3.2rem;
-
+        font-size: clamp(4.8rem, 16vw, 6.8rem);
+        line-height: 0.95;
     }
 
     .h-mod {
         text-align: center;
-        font-size: 1.4rem;
+        font-size: clamp(1.8rem, 6.2vw, 2.4rem);
+        line-height: 1.1;
     }
 
     .h1-mod {
@@ -955,7 +964,7 @@ footer {
     }
 
     .new {
-        font-size: 5.6rem;
+        font-size: 11.8rem;
     }
 
     .new-img {
@@ -967,12 +976,12 @@ footer {
     }
 
     .think {
-        line-height: 20px;
-        font-size: 0.98rem;
+        line-height: 30px;
+        font-size: 1.6rem;
     }
 
     .innovate {
-        font-size: 2.3rem;
+        font-size: 4.4rem;
         transform: scaleY(2.1);
     }
 
@@ -1037,8 +1046,8 @@ footer {
     }
 
     .think {
-        line-height: 19px;
-        font-size: 0.95rem;
+        line-height: 32px;
+        font-size: 1.5rem;
     }
 
     .sec1 {
@@ -1078,7 +1087,7 @@ footer {
     }
 
     .think {
-        font-size: 0.95rem;
+        font-size: 1.3rem;
         /* line-height: 21px; */
         text-align: justify;
     }

@@ -43,7 +43,7 @@
                 <a class="femzzy navbar-brand  d-md-none" href="">FEMZZY</a>
 
 
-                <button class="navbar-toggler border-0 " type="button border-0" data-bs-toggle="offcanvas"
+                <button class="navbar-toggler border-0 " type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <div class="hamburger d-flex flex-column  justify-content-between  align-center ">
                         <span class=" hamburger1 material-symbols-outlined  fw-bold fs-4  border-0 ">
@@ -461,11 +461,13 @@
                 if (isSmallScreen) {
                     const applyMobileFit = () => {
                         const docH = content.scrollHeight || 0;
+                        const docW = content.scrollWidth || 0;
                         const viewH = window.innerHeight || 1;
-                        const scaleFit = Math.min(1, viewH / docH);
-                        const s0 = Math.max(0.05, scaleFit * 0.9);
-                        const s1 = Math.max(0.06, Math.min(1, scaleFit * 0.95));
-                        const s2 = Math.max(0.07, Math.min(1, scaleFit));
+                        const viewW = window.innerWidth || 1;
+                        const scaleFit = Math.min(viewH / docH, viewW / docW) * 0.98;
+                        const s0 = Math.max(0.04, scaleFit * 0.9);
+                        const s1 = Math.max(0.05, scaleFit * 0.95);
+                        const s2 = Math.max(0.06, scaleFit);
 
                         document.documentElement.style.setProperty('--intro-scale-0', s0.toFixed(4));
                         document.documentElement.style.setProperty('--intro-scale-1', s1.toFixed(4));
@@ -475,6 +477,30 @@
                     requestAnimationFrame(applyMobileFit);
                     setTimeout(applyMobileFit, 300);
                     window.addEventListener('load', applyMobileFit, { once: true });
+                    window.addEventListener('resize', applyMobileFit);
+                }
+
+                content.addEventListener('animationend', () => {
+                    window.scrollTo(0, 0);
+                    document.documentElement.scrollTop = 0;
+                    document.body.scrollTop = 0;
+                }, { once: true });
+
+                const offcanvasEl = document.getElementById('offcanvasNavbar');
+                const toggler = document.querySelector('.navbar-toggler');
+                if (offcanvasEl && toggler) {
+                    offcanvasEl.addEventListener('show.bs.offcanvas', () => {
+                        toggler.disabled = true;
+                    });
+                    offcanvasEl.addEventListener('shown.bs.offcanvas', () => {
+                        toggler.disabled = false;
+                    });
+                    offcanvasEl.addEventListener('hide.bs.offcanvas', () => {
+                        toggler.disabled = true;
+                    });
+                    offcanvasEl.addEventListener('hidden.bs.offcanvas', () => {
+                        toggler.disabled = false;
+                    });
                 }
             });
         </script>
