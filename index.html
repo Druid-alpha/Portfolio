@@ -43,65 +43,7 @@
                 <a class="femzzy navbar-brand  d-md-none" href="">FEMZZY</a>
 
 
-                <button class="navbar-toggler border-0 " type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <div class="hamburger d-flex flex-column  justify-content-between  align-center ">
-                        <span class=" hamburger1 material-symbols-outlined  fw-bold fs-4  border-0 ">
-                            maximize
-                        </span>
-                        <span class=" hamburger2  material-symbols-outlined   fw-bold fs-4 text-center border-0">
-                            maximize
-                        </span>
-                    </div>
-                </button>
-
-                <div class="offcanvas offcanvas-top h-100 bg-black text-white " tabindex="-1" id="offcanvasNavbar"
-                    aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header  ">
-                        <h5 class="offcanvas-title  fw-bold fs-md-3 paper " id="offcanvasNavbarLabel "> My Paper
-                            Portfolio</h5>
-
-                        <button type="button" class="btn-close btn-closed " data-bs-dismiss="offcanvas"
-                            aria-label="Close">
-                            <span></span>
-                            <span></span>
-                        </button>
-                    </div>
-                    <div class="offcanvas-body">
-
-                        <ul class="navbar-nav p-1">
-
-
-                            <li class="nav-item d-flex flex-column /align-center   text-center ">
-                                <a class="big     text-center " id="navlink2" href="#">INDEX</a>
-                                <a class=" big  text-decoration-none text-center  " href="#">WORK</a>
-                                <a class=" big  text-decoration-none text-center " href="#">ABOUT</a>
-                            </li>
-                            <div class=" ">
-                                <ul class="d-flex justify-content-center align-center text-center gap-md-4 gap-4">
-                                    <a class="text-decoration-none" href="https://x.com/dreamboatey">
-                                        <li class=" social text-white list-unstyled "> TWITTER</li>
-
-                                    </a>
-                                    <a class="text-decoration-none" href="https://www.instagram.com/femzzyyyy">
-                                        <li class="social  text-white"> INSTAGRAM</li>
-                                    </a>
-                                    <a class="text-decoration-none" href="https://www.linkedin.com/in/ajayi-oluwafemi-0bb998284?trk=contact-info">
-                                        <li class=" social  text-white">LINKEDIN</li>
-                                    </a>
-                                    <a class="text-decoration-none" href="https://www.facebook.com/share/1JM167YZNJ/?mibextid=wwXIfr">
-                                        <li class="social text-white ">FACEBOOK</li>
-                                    </a>
-                                </ul>
-
-                            </div>
-                        </ul>
-                        <!-- <form class="d-flex mt-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form> -->
-                    </div>
-                </div>
+                <!-- Offcanvas removed -->
             </div>
         </nav>
         <header class="head container-fluid">
@@ -486,22 +428,6 @@
                     document.body.scrollTop = 0;
                 }, { once: true });
 
-                const offcanvasEl = document.getElementById('offcanvasNavbar');
-                const toggler = document.querySelector('.navbar-toggler');
-                if (offcanvasEl && toggler) {
-                    offcanvasEl.addEventListener('show.bs.offcanvas', () => {
-                        toggler.disabled = true;
-                    });
-                    offcanvasEl.addEventListener('shown.bs.offcanvas', () => {
-                        toggler.disabled = false;
-                    });
-                    offcanvasEl.addEventListener('hide.bs.offcanvas', () => {
-                        toggler.disabled = true;
-                    });
-                    offcanvasEl.addEventListener('hidden.bs.offcanvas', () => {
-                        toggler.disabled = false;
-                    });
-                }
             });
         </script>
     </div>
