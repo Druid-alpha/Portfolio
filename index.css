@@ -179,7 +179,13 @@ body {
 }
 
 .offcanvas {
-    transition: 1.5s ease;
+    transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.offcanvas-body {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
 }
 
 .all-wrk {
@@ -921,11 +927,11 @@ footer {
     }
 
     .sec1 {
-        font-size: clamp(5.2rem, 18vw, 7.6rem);
-        line-height: 0.95;
+        font-size: clamp(5.6rem, 19.5vw, 8.2rem);
+        line-height: 0.9;
         margin: 2px 4px;
-        padding: 0.12em 0;
-        letter-spacing: -0.02em;
+        padding: 0.14em 0;
+        letter-spacing: -0.03em;
     }
 
     .paper {
@@ -945,13 +951,18 @@ footer {
     }
 
     .sec3 {
-        font-size: clamp(4.8rem, 16vw, 6.8rem);
-        line-height: 0.95;
+        font-size: clamp(5.2rem, 17.5vw, 7.2rem);
+        line-height: 0.9;
+        padding: 0.08em 0;
+    }
+
+    .h1-mod,
+    .h-mod {
+        text-align: center;
     }
 
     .h-mod {
-        text-align: left;
-        font-size: clamp(1.6rem, 5.2vw, 2.1rem);
+        font-size: clamp(1.7rem, 5.6vw, 2.2rem);
         line-height: 1.2;
     }
 
@@ -982,6 +993,9 @@ footer {
         line-height: 30px;
         font-size: 1.6rem;
         text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
     }
 
     .innovate {
@@ -991,6 +1005,19 @@ footer {
 
     .txt-edit {
         font-size: 0.98rem;
+    }
+
+    .ecom-card {
+        height: auto;
+    }
+
+    .ecom-img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .ecom-text {
+        font-size: 0.95rem;
     }
 
     .card-section{
