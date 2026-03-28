@@ -179,7 +179,11 @@ body {
 }
 
 .offcanvas {
-    transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+    --bs-offcanvas-transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition: var(--bs-offcanvas-transition);
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .offcanvas-body {
@@ -217,16 +221,18 @@ body {
 .hamburger1,
 .hamburger2,
 .btn-closed {
-    transition: 1s ease-out;
+    transition: 0.4s ease;
 }
 
-.hamburger:hover .hamburger1,
-.btn-closed:hover {
-    transform: translate(5px);
-}
+@media (hover: hover) and (pointer: fine) {
+    .hamburger:hover .hamburger1,
+    .btn-closed:hover {
+        transform: translate(5px);
+    }
 
-.hamburger:hover .hamburger2 {
-    transform: translate(-5px);
+    .hamburger:hover .hamburger2 {
+        transform: translate(-5px);
+    }
 }
 
 .btn-closed {
