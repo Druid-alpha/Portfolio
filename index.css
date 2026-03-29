@@ -808,6 +808,10 @@ footer {
         transform-origin: center center;
     }
 
+    .navbar .container-fluid > .navbar-brand:first-of-type {
+        font-size: 0.8rem;
+    }
+
     .sec1 {
         font-size: 12.5rem;
     }
@@ -1010,6 +1014,13 @@ footer {
         font-size: 1rem !important;
     }
 
+    .navbar .container-fluid > .navbar-brand:first-of-type,
+    .navbar .femzzy a,
+    .navbar .femzzy.navbar-brand {
+        font-size: 0.75rem !important;
+        line-height: 1;
+    }
+
     .bord,
     .bord1 {
         border: none;
@@ -1117,6 +1128,25 @@ footer {
     .boxes{
         height: 272px;
     } */
+}
+@media (max-width: 425px) {
+    .navbar .femzzy.d-none.d-md-flex {
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .navbar .femzzy.navbar-brand.d-md-none {
+        display: none !important;
+    }
+
+    .navbar .container-fluid > .navbar-brand:first-of-type,
+    .navbar .femzzy a,
+    .navbar .femzzy.navbar-brand {
+        font-size: 0.72rem !important;
+        line-height: 1;
+    }
 }
 @media (max-width:415px){
     .h1-mod {
@@ -1251,5 +1281,14 @@ footer {
 
     .sec1, .sec3 {
         font-size: 4rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .navbar .navbar-brand,
+    .navbar .femzzy a {
+        font-size: 0.7rem !important;
+        line-height: 1;
+        letter-spacing: 0;
     }
 }

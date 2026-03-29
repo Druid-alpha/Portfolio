@@ -36,7 +36,7 @@
 
                 <div class="femzzy d-none d-md-flex ">
                     <a class="navbar-brand fs-6" href="#">FEMZZY</a>
-                    <a class="navbar-brand fs-6" href="#">|Front-End Developer</a>
+                    <a class="navbar-brand fs-6" href="#">Frontend Developer</a>
 
                 </div>
                 <a class="femzzy navbar-brand  d-md-none" href="">FEMZZY</a>
@@ -482,6 +482,18 @@
                 setTimeout(applyFitScales, 300);
                 window.addEventListener('load', applyFitScales, { once: true });
                 window.addEventListener('resize', applyFitScales);
+
+                const closeBtn = document.querySelector('.btn-closed');
+                if (closeBtn) {
+                    const triggerCloseAnim = () => {
+                        closeBtn.classList.add('is-open');
+                        setTimeout(() => closeBtn.classList.remove('is-open'), 300);
+                    };
+
+                    closeBtn.addEventListener('pointerdown', triggerCloseAnim, { passive: true });
+                    closeBtn.addEventListener('touchstart', triggerCloseAnim, { passive: true });
+                    closeBtn.addEventListener('click', triggerCloseAnim);
+                }
 
                 const offcanvasList = document.querySelectorAll('.offcanvas');
                 offcanvasList.forEach((el) => {
