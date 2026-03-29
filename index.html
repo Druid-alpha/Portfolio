@@ -436,11 +436,37 @@
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
             </script>
         <script>
+            const disableIntroForBackNav = () => {
+                const content = document.querySelector('.body-content');
+                if (!content) return;
+                content.classList.add('intro-done');
+                document.documentElement.classList.add('no-intro');
+                document.documentElement.classList.remove('is-animating');
+                content.style.animation = 'none';
+            };
+
+            window.addEventListener('pageshow', (event) => {
+                const navEntries = (performance.getEntriesByType && performance.getEntriesByType('navigation')) || [];
+                const navType = navEntries[0]?.type;
+                const isBackNav = event.persisted || navType === 'back_forward' || performance?.navigation?.type === 2;
+                if (isBackNav) {
+                    disableIntroForBackNav();
+                }
+            });
+
             document.addEventListener('DOMContentLoaded', () => {
                 const content = document.querySelector('.body-content');
                 if (!content) return;
 
-                document.documentElement.classList.add('is-animating');
+                const navEntries = (performance.getEntriesByType && performance.getEntriesByType('navigation')) || [];
+                const navType = navEntries[0]?.type;
+                const isBackNav = navType === 'back_forward' || performance?.navigation?.type === 2;
+
+                if (isBackNav) {
+                    disableIntroForBackNav();
+                } else {
+                    document.documentElement.classList.add('is-animating');
+                }
 
                 const scrollTopInstant = () => {
                     window.scrollTo(0, 0);
@@ -455,12 +481,12 @@
                     document.documentElement.classList.remove('is-animating');
                 };
 
-                scrollTopInstant();
-
-                content.addEventListener('animationend', finalizeIntro, { once: true });
-
-                // Fallback in case animationend doesn't fire
-                setTimeout(finalizeIntro, 6000);
+                if (!isBackNav) {
+                    scrollTopInstant();
+                    content.addEventListener('animationend', finalizeIntro, { once: true });
+                    // Fallback in case animationend doesn't fire
+                    setTimeout(finalizeIntro, 6000);
+                }
 
                 const applyFitScales = () => {
                     const docH = content.scrollHeight || 0;

@@ -66,6 +66,21 @@ body {
     overflow: hidden;
 }
 
+.no-intro .body-content {
+    animation: none !important;
+    transform: none !important;
+}
+
+.no-intro .body-content::after {
+    animation: none !important;
+    opacity: 0 !important;
+}
+
+.no-intro .femzzy,
+.no-intro .last {
+    animation: none !important;
+}
+
 @keyframes bodyRotate {
     0% {
         transform: translate3d(0, 0, 0) scale(0.08) rotate(0deg);
