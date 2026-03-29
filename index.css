@@ -39,7 +39,9 @@ body {
     background-image: url('./multimedia/portfolio\ background.jpg');
     margin: auto;
     min-height: 100dvh;
-    animation: bodyRotate 6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+    animation: bodyRotateMobile 6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+    --page-scale: 1;
+    --intro-final: 1;
     transition: transform 0.6s ease-in-out;
     font-family: "Playfair", serif !important;
     overflow-x: hidden;
@@ -66,17 +68,17 @@ body {
 
 @keyframes bodyRotate {
     0% {
-        transform: translate3d(0, 20vh, 0) scale(0.08) rotate(0deg);
+        transform: translate3d(0, 0, 0) scale(0.08) rotate(0deg);
         opacity: 1;
     }
 
     55% {
-        transform: translate3d(0, 50vh, 0) scale(0.09) rotate(0deg);
+        transform: translate3d(0, 0, 0) scale(0.09) rotate(0deg);
         opacity: 1;
     }
 
     75% {
-        transform: translate3d(0, 50vh, 0) scale(0.10) rotate(-360deg);
+        transform: translate3d(0, 0, 0) scale(0.10) rotate(-360deg);
         opacity: 1;
     }
 
@@ -103,22 +105,22 @@ body {
 
 @keyframes bodyRotateMobile {
     0% {
-        transform: translate3d(0, calc(50vh - 50%), 0) scale(var(--intro-scale-0, 0.18)) rotate(0deg);
+        transform: translate3d(0, calc(50vh - 50%), 0) scale(calc(var(--intro-scale-0, 0.18) * var(--page-scale, 1))) rotate(0deg);
         opacity: 1;
     }
 
     55% {
-        transform: translate3d(0, calc(50vh - 50%), 0) scale(var(--intro-scale-1, 0.2)) rotate(0deg);
+        transform: translate3d(0, calc(50vh - 50%), 0) scale(calc(var(--intro-scale-1, 0.2) * var(--page-scale, 1))) rotate(0deg);
         opacity: 1;
     }
 
     75% {
-        transform: translate3d(0, calc(50vh - 50%), 0) scale(var(--intro-scale-2, 0.22)) rotate(-360deg);
+        transform: translate3d(0, calc(50vh - 50%), 0) scale(calc(var(--intro-scale-2, 0.22) * var(--page-scale, 1))) rotate(-360deg);
         opacity: 1;
     }
 
     100% {
-        transform: translate3d(0, 0, 0) scale(1) rotate(-360deg);
+        transform: translate3d(0, 0, 0) scale(calc(var(--intro-final, 1) * var(--page-scale, 1))) rotate(-360deg);
         opacity: 1;
     }
 }
@@ -276,6 +278,14 @@ body {
 
 .btn-closed:active span:last-child {
     transform: rotate(-45deg)
+}
+
+.btn-closed.is-open span:first-child {
+    transform: rotate(45deg);
+}
+
+.btn-closed.is-open span:last-child {
+    transform: rotate(-45deg);
 }
 
 #navlink2 {
@@ -864,6 +874,34 @@ footer {
 .cardss {
     width:333px;
     font-size: 1rem!important;
+}
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+    .body-content {
+        --intro-final: 1;
+        --page-scale: 0.82;
+    }
+
+    .sec1 {
+        font-size: 18rem;
+    }
+
+    .sec3 {
+        font-size: 12rem;
+    }
+
+    .h-mod {
+        font-size: 3rem;
+        line-height: 64px;
+    }
+
+    .new {
+        font-size: 8.5rem;
+    }
+
+    .innovate {
+        font-size: 6.2rem;
+    }
 }
 
 
