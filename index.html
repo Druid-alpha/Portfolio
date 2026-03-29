@@ -30,8 +30,7 @@
 </head>
 
 <body class="bg-dark">
-    <div class="body-content">
-        <nav class="navbar  border-bottom border-black bg-body-tertiary fixed-top">
+    <nav class="navbar  border-bottom border-black bg-body-tertiary fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand fs-6 " href="#">NIGERIA,OSG</a>
 
@@ -43,9 +42,68 @@
                 <a class="femzzy navbar-brand  d-md-none" href="">FEMZZY</a>
 
 
-                <!-- Offcanvas removed -->
+                <button class="navbar-toggler border-0 " type="button border-0" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <div class="hamburger d-flex flex-column  justify-content-between  align-center ">
+                        <span class=" hamburger1 material-symbols-outlined  fw-bold fs-4  border-0 ">
+                            maximize
+                        </span>
+                        <span class=" hamburger2  material-symbols-outlined   fw-bold fs-4 text-center border-0">
+                            maximize
+                        </span>
+                    </div>
+                </button>
+
+                <div class="offcanvas offcanvas-top h-100 bg-black text-white " tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header  ">
+                        <h5 class="offcanvas-title  fw-bold fs-md-3 paper " id="offcanvasNavbarLabel "> My Paper
+                            Portfolio</h5>
+
+                        <button type="button" class="btn-close btn-closed " data-bs-dismiss="offcanvas"
+                            aria-label="Close">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                    <div class="offcanvas-body">
+
+                        <ul class="navbar-nav p-1">
+
+
+                            <li class="nav-item d-flex flex-column /align-center   text-center ">
+                                <a class="big     text-center " id="navlink2" href="#">INDEX</a>
+                                <a class=" big  text-decoration-none text-center  " href="#">WORK</a>
+                                <a class=" big  text-decoration-none text-center " href="#">ABOUT</a>
+                            </li>
+                            <div class=" ">
+                                <ul class="d-flex justify-content-center align-center text-center gap-md-4 gap-4">
+                                    <a class="text-decoration-none" href="https://x.com/dreamboatey">
+                                        <li class=" social text-white list-unstyled "> TWITTER</li>
+
+                                    </a>
+                                    <a class="text-decoration-none" href="https://www.instagram.com/femzzyyyy">
+                                        <li class="social  text-white"> INSTAGRAM</li>
+                                    </a>
+                                    <a class="text-decoration-none" href="https://www.linkedin.com/in/ajayi-oluwafemi-0bb998284?trk=contact-info">
+                                        <li class=" social  text-white">LINKEDIN</li>
+                                    </a>
+                                    <a class="text-decoration-none" href="https://www.facebook.com/share/1JM167YZNJ/?mibextid=wwXIfr">
+                                        <li class="social text-white ">FACEBOOK</li>
+                                    </a>
+                                </ul>
+
+                            </div>
+                        </ul>
+                        <!-- <form class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form> -->
+                    </div>
+                </div>
             </div>
         </nav>
+    <div class="body-content">
         <header class="head container-fluid">
             <div class="row g-4 align-items-stretch">
                 <div class="bord overflow-hidden col-12 col-md-4 px-md-2 px-lg-4">
@@ -382,34 +440,37 @@
                 const content = document.querySelector('.body-content');
                 if (!content) return;
 
+                document.documentElement.classList.add('is-animating');
+
                 const scrollTopInstant = () => {
                     window.scrollTo(0, 0);
                     document.documentElement.scrollTop = 0;
                     document.body.scrollTop = 0;
                 };
 
-                scrollTopInstant();
-
-                const onEnd = () => {
+                const finalizeIntro = () => {
+                    if (content.classList.contains('intro-done')) return;
                     scrollTopInstant();
+                    content.classList.add('intro-done');
+                    document.documentElement.classList.remove('is-animating');
                 };
 
-                content.addEventListener('animationend', onEnd, { once: true });
+                scrollTopInstant();
+
+                content.addEventListener('animationend', finalizeIntro, { once: true });
 
                 // Fallback in case animationend doesn't fire
-                setTimeout(scrollTopInstant, 6000);
+                setTimeout(finalizeIntro, 6000);
 
                 const isSmallScreen = window.matchMedia('(max-width: 430px)').matches;
                 if (isSmallScreen) {
                     const applyMobileFit = () => {
                         const docH = content.scrollHeight || 0;
-                        const docW = content.scrollWidth || 0;
                         const viewH = window.innerHeight || 1;
-                        const viewW = window.innerWidth || 1;
-                        const scaleFit = Math.min(viewH / docH, viewW / docW) * 0.98;
-                        const s0 = Math.max(0.04, scaleFit * 0.9);
-                        const s1 = Math.max(0.05, scaleFit * 0.95);
-                        const s2 = Math.max(0.06, scaleFit);
+                        const scaleFit = Math.min(1, viewH / docH);
+                        const s0 = Math.max(0.05, scaleFit * 0.9);
+                        const s1 = Math.max(0.06, Math.min(1, scaleFit * 0.95));
+                        const s2 = Math.max(0.07, Math.min(1, scaleFit));
 
                         document.documentElement.style.setProperty('--intro-scale-0', s0.toFixed(4));
                         document.documentElement.style.setProperty('--intro-scale-1', s1.toFixed(4));
@@ -422,12 +483,15 @@
                     window.addEventListener('resize', applyMobileFit);
                 }
 
-                content.addEventListener('animationend', () => {
-                    window.scrollTo(0, 0);
-                    document.documentElement.scrollTop = 0;
-                    document.body.scrollTop = 0;
-                }, { once: true });
-
+                const offcanvasList = document.querySelectorAll('.offcanvas');
+                offcanvasList.forEach((el) => {
+                    el.addEventListener('show.bs.offcanvas', () => {
+                        document.documentElement.classList.add('offcanvas-open');
+                    });
+                    el.addEventListener('hidden.bs.offcanvas', () => {
+                        document.documentElement.classList.remove('offcanvas-open');
+                    });
+                });
             });
         </script>
     </div>
