@@ -22,6 +22,12 @@ body {
     overflow-y: hidden;
 }
 
+.is-animating .navbar {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-30px);
+}
+
 .body-scale {
     transform-origin: center top;
     overflow: hidden;
