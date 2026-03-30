@@ -313,13 +313,16 @@ body {
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .hamburger:hover .hamburger1,
-    .btn-closed:hover {
+    .hamburger:hover .hamburger1 {
         transform: translate(5px);
     }
 
     .hamburger:hover .hamburger2 {
         transform: translate(-5px);
+    }
+
+    .btn-closed:hover {
+        transform: none;
     }
 }
 
