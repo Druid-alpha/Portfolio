@@ -76,8 +76,7 @@ body {
     opacity: 0 !important;
 }
 
-.no-intro .femzzy,
-.no-intro .last {
+.no-intro .femzzy {
     animation: none !important;
 }
 
@@ -212,6 +211,71 @@ body {
     transform: translateZ(0);
 }
 
+.offcanvas-100 {
+    height: 100vh !important;
+}
+
+.offcanvas-scroll {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.offcanvas-header {
+    background: #f8f9fa;
+    color: #111;
+}
+
+.offcanvas-header .btn-closed span {
+    background-color: #111;
+}
+
+.offcanvas-header .offcanvas-title,
+.offcanvas-header .btn-closed {
+    color: #111;
+}
+
+.offcanvas-header .navbar-brand {
+    color: #111 !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0;
+}
+
+.offcanvas-navtext {
+    row-gap: 4px;
+}
+
+.offcanvas-body {
+    overflow-y: auto;
+}
+
+.offcanvas-open body {
+    overflow: auto !important;
+}
+
+.scroll-offcanvas {
+    position: fixed !important;
+    inset: 0;
+    height: 100vh !important;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition: none !important;
+    pointer-events: auto;
+    z-index: 1055;
+    will-change: transform, opacity;
+}
+
+.scroll-offcanvas-active .body-content {
+    padding-top: var(--scroll-offcanvas-gap, 32px);
+}
+
+
+.scroll-offcanvas.is-done {
+    visibility: hidden;
+}
+
 .offcanvas-body {
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
@@ -266,7 +330,7 @@ body {
     width: 32px;
     height: 32px;
     border: none;
-    background: black;
+    background: transparent;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -280,7 +344,7 @@ body {
     margin-right: 70px !important;
     width: 40px;
     height: 3px;
-    background-color: white;
+    background-color: black;
     border-radius: 2px;
     transition: all 0.3s ease;
 
@@ -1116,6 +1180,17 @@ footer {
 
     .ecom-text {
         font-size: 0.95rem;
+    }
+
+    .offcanvas .big {
+        font-size: clamp(3.8rem, 13.5vw, 5.2rem) !important;
+        line-height: 1;
+    }
+
+    .body-content img {
+        width: 100% !important;
+        height: auto !important;
+        display: block;
     }
 
     .card-section{

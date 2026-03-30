@@ -54,12 +54,14 @@
                     </div>
                 </button>
 
-                <div class="offcanvas offcanvas-top h-100 bg-black text-white " tabindex="-1" id="offcanvasNavbar"
-                    aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header  ">
-                        <h5 class="offcanvas-title  fw-bold fs-md-3 paper " id="offcanvasNavbarLabel "> My Paper
-                            Portfolio</h5>
-
+                    <div class="offcanvas offcanvas-top offcanvas-100 offcanvas-scroll bg-black text-white " tabindex="-1"
+                    id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" data-bs-scroll="true"
+                    data-bs-backdrop="false">
+                    <div class="offcanvas-header  d-flex justify-content-between align-items-center gap-2">
+                        <div class="offcanvas-navtext d-flex align-items-center gap-2 flex-wrap">
+                            <span class="navbar-brand m-0">FEMZZY</span>
+                            <span class="navbar-brand m-0">Frontend Developer</span>
+                        </div>
                         <button type="button" class="btn-close btn-closed " data-bs-dismiss="offcanvas"
                             aria-label="Close">
                             <span></span>
@@ -530,6 +532,69 @@
                         document.documentElement.classList.remove('offcanvas-open');
                     });
                 });
+
+                const scrollOverlay = document.getElementById('offcanvasNavbar');
+                if (scrollOverlay) {
+                    let latestScroll = 0;
+                    let rafId = 0;
+                    let viewH = window.innerHeight || 1;
+                    let isActive = false;
+
+                    const updateOverlay = () => {
+                        rafId = 0;
+                        viewH = window.innerHeight || 1;
+                        const progress = Math.min(Math.max(latestScroll / viewH, 0), 1);
+                        const translateY = -progress * viewH;
+
+                        scrollOverlay.style.transform = `translate3d(0, ${translateY}px, 0)`;
+
+                        if (progress >= 1) {
+                            scrollOverlay.classList.add('is-done');
+                        } else {
+                            scrollOverlay.classList.remove('is-done');
+                        }
+                    };
+
+                    const onScroll = () => {
+                        if (!isActive) return;
+                        latestScroll = window.scrollY || 0;
+                        if (!rafId) {
+                            rafId = requestAnimationFrame(updateOverlay);
+                        }
+                    };
+
+                    const onResize = () => {
+                        if (!isActive) return;
+                        viewH = window.innerHeight || 1;
+                        updateOverlay();
+                    };
+
+                    const activateOverlay = () => {
+                        isActive = true;
+                        latestScroll = 0;
+                        scrollOverlay.classList.add('scroll-offcanvas');
+                        scrollOverlay.classList.remove('is-done');
+                        document.documentElement.classList.add('scroll-offcanvas-active');
+                        document.documentElement.style.setProperty('--scroll-offcanvas-gap', '85vh');
+                        window.scrollTo(0, 0);
+                        updateOverlay();
+                        window.addEventListener('scroll', onScroll, { passive: true });
+                        window.addEventListener('resize', onResize, { passive: true });
+                    };
+
+                    const deactivateOverlay = () => {
+                        isActive = false;
+                        scrollOverlay.classList.remove('scroll-offcanvas', 'is-done');
+                        scrollOverlay.style.transform = '';
+                        document.documentElement.classList.remove('scroll-offcanvas-active');
+                        document.documentElement.style.removeProperty('--scroll-offcanvas-gap');
+                        window.removeEventListener('scroll', onScroll);
+                        window.removeEventListener('resize', onResize);
+                    };
+
+                    scrollOverlay.addEventListener('show.bs.offcanvas', activateOverlay);
+                    scrollOverlay.addEventListener('hidden.bs.offcanvas', deactivateOverlay);
+                }
             });
         </script>
     </div>
