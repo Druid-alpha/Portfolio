@@ -566,7 +566,14 @@
                     const onResize = () => {
                         if (!isActive) return;
                         viewH = window.innerHeight || 1;
+                        setScrollGap();
                         updateOverlay();
+                    };
+
+                    const setScrollGap = () => {
+                        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+                        const gapValue = isMobile ? '520px' : '85vh';
+                        document.documentElement.style.setProperty('--scroll-offcanvas-gap', gapValue);
                     };
 
                     const activateOverlay = () => {
@@ -575,7 +582,7 @@
                         scrollOverlay.classList.add('scroll-offcanvas');
                         scrollOverlay.classList.remove('is-done');
                         document.documentElement.classList.add('scroll-offcanvas-active');
-                        document.documentElement.style.setProperty('--scroll-offcanvas-gap', '85vh');
+                        setScrollGap();
                         window.scrollTo(0, 0);
                         updateOverlay();
                         window.addEventListener('scroll', onScroll, { passive: true });
