@@ -1160,7 +1160,7 @@ footer {
     }
 
     .sec3 {
-        font-size: clamp(5.7rem, 20vw, 8.2rem);
+        font-size: clamp(5.6rem, 20vw, 8.2rem);
         line-height: 0.9;
         padding: 0.08em 0;
     }
@@ -1322,7 +1322,7 @@ footer {
         font-size: 1.7rem;
     }
         .h-mod {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
         .think {
         
@@ -1342,7 +1342,7 @@ footer {
     }
 
     .new {
-        font-size: 10.3rem;
+        font-size: 10.1rem;
     }
 
     .sec3 {
