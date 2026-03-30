@@ -258,11 +258,16 @@ body {
     inset: 0;
     height: 100vh !important;
     transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
     opacity: 1;
     transition: none !important;
     pointer-events: auto;
     z-index: 1055;
     will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    contain: paint;
 }
 
 .scroll-offcanvas-active .body-content {

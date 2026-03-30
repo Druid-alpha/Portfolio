@@ -543,6 +543,13 @@
                     const updateOverlay = () => {
                         rafId = 0;
                         viewH = window.innerHeight || 1;
+                        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+                        if (isMobile) {
+                            scrollOverlay.style.transform = 'translate3d(0, 0, 0)';
+                            scrollOverlay.classList.remove('is-done');
+                            return;
+                        }
+
                         const progress = Math.min(Math.max(latestScroll / viewH, 0), 1);
                         const translateY = -progress * viewH;
 
@@ -557,6 +564,7 @@
 
                     const onScroll = () => {
                         if (!isActive) return;
+                        if (window.matchMedia('(max-width: 768px)').matches) return;
                         latestScroll = window.scrollY || 0;
                         if (!rafId) {
                             rafId = requestAnimationFrame(updateOverlay);
@@ -572,7 +580,7 @@
 
                     const setScrollGap = () => {
                         const isMobile = window.matchMedia('(max-width: 768px)').matches;
-                        const gapValue = isMobile ? '720px' : '85vh';
+                        const gapValue = isMobile ? '820px' : '85vh';
                         document.documentElement.style.setProperty('--scroll-offcanvas-gap', gapValue);
                     };
 
