@@ -1216,8 +1216,9 @@ footer {
     }
 
     .offcanvas .big {
-        font-size: clamp(3.8rem, 13.5vw, 5.2rem) !important;
-        line-height: 1;
+        font-size: clamp(4.6rem, 16vw, 6.2rem) !important;
+        line-height: 0.95;
+        margin-block: 0.45em;
     }
 
     .body-content img {
