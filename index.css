@@ -1,5 +1,5 @@
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     overflow-x: hidden;
 }
 
@@ -258,16 +258,11 @@ body {
     inset: 0;
     height: 100vh !important;
     transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
     opacity: 1;
     transition: none !important;
     pointer-events: auto;
     z-index: 1055;
     will-change: transform, opacity;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform-style: preserve-3d;
-    contain: paint;
 }
 
 .scroll-offcanvas-active .body-content {
@@ -1006,6 +1001,19 @@ footer {
     }
 }
 
+@media (min-width: 1366px) and (max-width: 1600px) {
+    .idea-img {
+        width: 65% !important;
+        max-width: 65%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .project-center {
+        margin-top: 32px;
+    }
+}
+
 
     .new {
         font-size: 5.4rem;
@@ -1101,7 +1109,7 @@ footer {
     }
 
     .sec1 {
-        font-size: clamp(5.6rem, 19.5vw, 8.2rem);
+        font-size: clamp(6.6rem, 22vw, 9.2rem);
         line-height: 0.9;
         margin: 2px 4px;
         padding: 0.14em 0;
@@ -1122,9 +1130,29 @@ footer {
     .bord,
     .bord1 {
         border: none;
-        border-bottom: 1px solid #96928c;
         padding: 10px;
         margin: 20px 0;
+    }
+
+    .ecom-section {
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .border {
+        border: none !important;
+    }
+
+    .project-card {
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .project-center {
+        border-top: 1px solid #96928c;
+        border-bottom: 1px solid #96928c;
+        padding-top: 12px;
+        padding-bottom: 12px;
     }
 
     .social {
@@ -1132,7 +1160,7 @@ footer {
     }
 
     .sec3 {
-        font-size: clamp(5.2rem, 17.5vw, 7.2rem);
+        font-size: clamp(5.7rem, 20vw, 8.2rem);
         line-height: 0.9;
         padding: 0.08em 0;
     }
@@ -1232,6 +1260,18 @@ footer {
         display: block;
     }
 
+    footer {
+        padding: 10px;
+    }
+
+    .last span {
+        font-size: 1.4rem;
+    }
+
+    .last span .bg-dark {
+        padding: 0 8px;
+    }
+
     .card-section{
         height:auto;
         margin-bottom: 20px;
@@ -1297,12 +1337,12 @@ footer {
         text-align: center;
     }
     .innovate {
-        font-size: 2.1rem;
+        font-size: 3.8rem;
         transform: scaleY(2.1);
     }
 
     .new {
-        font-size: 4.8rem;
+        font-size: 10.3rem;
     }
 
     .sec3 {
@@ -1317,12 +1357,12 @@ footer {
     }
 
     .sec1 {
-        font-size: 3.2rem;
+        font-size: 5rem;
         margin: 0;
     }
 
     .h-mod {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
     .h1-mod{
         font-size: 1.45rem;
@@ -1330,16 +1370,41 @@ footer {
     .soc-link{
         font-size: 0.7rem;
     }
+
+    footer {
+        padding: 8px 10px;
+    }
+
+    .last span {
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 321px) {
+    .navbar .container-fluid {
+        flex-wrap: nowrap;
+        gap: 6px;
+    }
+
+    .navbar .container-fluid > .navbar-brand:first-of-type,
+    .navbar .femzzy a,
+    .navbar .femzzy.navbar-brand {
+        font-size: 0.68rem !important;
+        white-space: nowrap;
+    }
+
+    .navbar-toggler {
+        padding: 0;
+        margin-left: auto;
+    }
+
     .sec1 {
-        font-size: 3.4rem;
+        font-size: 5.2rem;
         margin: 0;
     }
 
     .sec3 {
-        font-size: 3rem;
+        font-size: 5rem;
         margin: 10px 0;
     }
 
@@ -1364,11 +1429,11 @@ footer {
     }
 
     .new {
-        font-size: 5rem;
+        font-size: 7rem;
     }
 
     .innovate {
-        font-size: 2.2rem;
+        font-size: 3.2rem;
         transform: scaleY(2.5);
     }
 
@@ -1377,7 +1442,9 @@ footer {
     }
 
     .h-mod {
-        font-size: 1.15rem;
+        font-size: 1.6rem;
+        line-height: 1.15;
+        display: block;
     }
 
     .social {
@@ -1409,7 +1476,23 @@ footer {
     }
 
     .sec1, .sec3 {
-        font-size: 4rem;
+        font-size: 5.2rem;
+    }
+
+    .inno-col {
+        gap: 40px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    .last span {
+        font-size: 1.3rem;
+    }
+
+    .last span .bg-dark {
+        padding: 0 6px;
     }
 }
 
