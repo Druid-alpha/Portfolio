@@ -920,6 +920,19 @@ footer {
         font-size: 1.1rem;
     }
 
+    .sec2 .ratio {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 24px;
+        aspect-ratio: 21 / 9;
+    }
+
+    /* .img-edit {
+        width: 100% !important;
+        height: 100% !important;
+    } */
+
     .deliver {
         font-size: 3.4rem !important;
     }
@@ -1180,6 +1193,25 @@ footer {
 
     .ecom-text {
         font-size: 0.95rem;
+    }
+
+    .sec2 .ratio {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 20px;
+        aspect-ratio: auto;
+        height: auto;
+    }
+
+    .sec2 .ratio::before {
+        padding-top: 0 !important;
+    }
+
+    .sec2 .ratio > img {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
     }
 
     .offcanvas .big {
