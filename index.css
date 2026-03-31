@@ -1290,6 +1290,9 @@ footer {
         min-height: 180px;
         padding: 12px;
     }
+    .project-center{
+        padding-top: 41px;
+    }
     /* .cardss{
         height:254px;
         width:351px;
@@ -1322,7 +1325,7 @@ footer {
         font-size: 1.7rem;
     }
         .h-mod {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
         .think {
         
